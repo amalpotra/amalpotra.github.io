@@ -85,7 +85,6 @@ html, body {
     -o-transform: translateY(30px);
     transform: translateY(30px);
     width: 0;
-    
 }
 #menu.is-active .bar:nth-child(3) {
     -webkit-transform: translateY(-10px) rotate(-45deg);
@@ -105,10 +104,10 @@ html, body {
     transform: translateY(-101%);
 }
 .nav ul {
-    top: 0;
-    left: 0;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: #000;
     opacity: 0.85;
     text-align: center;
@@ -128,10 +127,13 @@ html, body {
     letter-spacing: 20px;
 }
 .nav li {
-    padding: 3vh;
+    padding: 4vh;
 }
 .nav li:first-child {
-    margin-top: 20vh;
+    margin-top: auto;
+}
+.nav li:last-child {
+    margin-bottom: auto;
 }
 .reveal_1 {
     animation: reveal .5s ease-in-out;
