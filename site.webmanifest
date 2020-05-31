@@ -1,6 +1,6 @@
 {
     "name": "Amarjeet Malpotra",
-    "short_name": "Amarjeet",
+    "short_name": "Amarjeet Malpotra",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,8 +13,8 @@
             "type": "image/png"
         }
     ],
-    "start_url": "/index.html",
-    "theme_color": "#000000",
-    "background_color": "#000000",
+    "theme_color": "#111111",
+    "background_color": "#111111",
+    "start_url": "https://amarjeetmalpotra.github.io",
     "display": "standalone"
 }
