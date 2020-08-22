@@ -47,8 +47,8 @@ function loaderPage() {
 var home = $('.home');
 $('.home').mousemove(function (e) {
 	home.css({
-		backgroundPositionX: -e.screenX / 50 + 'px',
-		backgroundPositionY: -e.screenY / 50 + 'px',
+		backgroundPositionX: -e.screenX / 35 + 'px',
+		backgroundPositionY: -e.screenY / 35 + 'px',
 	});
 });
 //Disable nav menu for various events
