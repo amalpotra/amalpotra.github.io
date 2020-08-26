@@ -44,7 +44,6 @@ body {
 	left: 0;
 	height: 8px;
 	background: #ddd;
-	transition: width 300ms ease;
 	z-index: 4;
 }
 .scroll_top {
