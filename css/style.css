@@ -510,9 +510,6 @@ time {
 	.nav-item a:hover {
 		letter-spacing: 2px;
 	}
-	.home {
-		background-size: auto 103vh;
-	}
 	.logo {
 		margin-top: 20vh;
 	}
