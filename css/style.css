@@ -38,6 +38,19 @@ body {
 	z-index: 5;
 	background: #fff url(../img/preloader.svg) center no-repeat;
 }
+/* Scroll Bar */
+::-webkit-scrollbar {
+	width: 8px;
+}
+::-webkit-scrollbar-track {
+	background: #ddd;
+}
+::-webkit-scrollbar-thumb {
+	background: #777;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
 #progress {
 	position: fixed;
 	top: 0;
