@@ -42,235 +42,51 @@
 		<meta name="application-name" content="Amarjeet" />
 		<meta name="msapplication-TileColor" content="#111111" />
 		<meta name="theme-color" content="#111111" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.min.css"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-		/>
-		<link
-			href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap"
 			rel="stylesheet"
 		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poiret+One"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css2?family=Syncopate"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/main.css" />
 	</head>
 	<body>
-		<div class="my-loader"></div>
-		<div id="progress"></div>
-		<div class="menu-toggle" id="menu">
-			<span class="bar"></span>
-			<span class="bar"></span>
-		</div>
-		<div class="nav nav-dis">
-			<ul>
-				<li class="nav-item li_1">
-					<a id="home" href="javascript:void(0)">Home</a>
-				</li>
-				<li class="nav-item li_2">
-					<a id="about" href="javascript:void(0)">About</a>
-				</li>
-				<li class="nav-item li_3">
-					<a id="portfolio" href="javascript:void(0)">Portfolio</a>
-				</li>
-				<li class="nav-item">
-					<a id="social" href="javascript:void(0)">Social</a>
-				</li>
-			</ul>
-		</div>
-		<div class="home">
-			<div id="intro" class="container text-center">
-				<img class="logo" src="img/logo.svg" alt="Logo" />
-				<h1
-					class="name white shade"
-					data-aos="zoom-in-up"
-					data-aos-delay="400"
-					data-aos-duration="600"
-				>
-					<span class="anim">Amarjeet Malpotra</span>
-				</h1>
-				<p
-					class="about white shade"
-					data-aos="fade-up"
-					data-aos-delay="800"
-					data-aos-duration="600"
-				>
-					Web Developer, Programmer and a Technology Freak
-				</p>
-				<div class="bounce">
-					<i class="white fa-4x fa fa-chevron-down"></i>
-				</div>
+		<div class="header">
+			<img
+				src="/assets/svgs/logo.svg"
+				alt="Amarjeet Malpotra"
+				id="logo"
+			/>
+			<div class="menu-btn" title="Menu">
+				<span></span>
 			</div>
 		</div>
-		<section class="profile">
+		<div class="stack">
+			<div class="card-1"></div>
+			<div class="card-2"></div>
+		</div>
+		<div class="card">
 			<div class="container">
-				<div class="image" data-aos="zoom-out-up"></div>
-				<h1
-					class="head white font-weight-bold anim shade"
-					data-aos="fade-up"
+				<div class="avatar"></div>
+				<div class="name">Amarjeet Malpotra</div>
+				<div class="about">Hey, geeks out there!</div>
+				<a
+					href="http://github.com/amarjeetmalpotra/amarjeetmalpotra.github.io"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="github"
 				>
-					Hi, There!
-				</h1>
-				<p class="about white mt-5">
-					I'm
-					<span class="spotlight font-weight-bold"
-						>Amarjeet Malpotra, </span
-					>a versatile web developer and programmer. My work in web
-					development has given me an eye for detail, a mind for
-					creativity and a technical aptitude for various
-					developments. Self-motivation and passion are what feeds my
-					eager to learn technologies. As I can never stop learning
-					more and more each day, I strive to build responsive
-					websites, and enhanced digital experiences with semantic
-					HTML5 markup, CSS3, JQuery, JavaScript, PHP and lot more.
-					Off the computers, I enjoy driving to some great places and
-					spending time with my family and friends.
-				</p>
+					<img src="/assets/svgs/brands/github.svg" alt="Github" />
+					<span>Like what you see? Well... its open source.</span>
+				</a>
 			</div>
-		</section>
-		<section class="timeline">
-			<div class="pt-2 pb-5 white shade">
-				<h1
-					class="head font-weight-bold pb-2 pt-3 anim"
-					data-aos="fade-up"
-				>
-					My Portfolio
-				</h1>
-				<h2 class="mb-4" data-aos="zoom-out-up">More about me</h2>
+			<div class="hero">
+				<img src="/assets/svgs/logo.svg" alt="Logo" id="legend" />
 			</div>
-			<ul>
-				<li>
-					<div data-aos="zoom-in-left">
-						<time class="shade">2022</time>
-						<hr />
-						<span class="font-weight-bold shade">
-							University of Jammu | MCA.</span
-						><br />
-						Joined Master of Computer Applications in 2019, a three
-						year degree programme to further sharpen my Computer
-						Science concepts.
-					</div>
-				</li>
-				<li>
-					<div data-aos="zoom-in-right">
-						<time class="shade">2019</time>
-						<hr />
-						<span class="font-weight-bold shade">
-							Haptics WebTech | Web Developer.</span
-						><br />
-						So, all this web part of me started from here. Being one
-						of the co-founders, I manage all the web developments
-						along with some operational guides.
-					</div>
-				</li>
-				<li>
-					<div data-aos="zoom-in-left">
-						<time class="shade">2019</time>
-						<hr />
-						<span class="font-weight-bold shade">
-							University of Jammu | BCA.</span
-						><br />
-						A three year degree programme, from Govt. Degree College
-						Kathua. Basics of various subjects and languages, along
-						with a 4th rank in University.
-					</div>
-				</li>
-				<li>
-					<div data-aos="zoom-in-right">
-						<time class="shade">2016</time>
-						<hr />
-						<span class="font-weight-bold shade">
-							R.S Jagriti Niketan | High School.</span
-						><br />
-						Developed a keen interest in Computers and Technology,
-						and started my journey of programming with C++.
-					</div>
-				</li>
-			</ul>
-		</section>
-		<div class="footer">
-			<div class="container">
-				<div class="pb-5 white shade">
-					<h1
-						class="head font-weight-bold pb-2 pt-3 anim"
-						data-aos="fade-up"
-					>
-						Reach Out
-					</h1>
-					<h2 class="mb-5" data-aos="zoom-out-up">
-						Wanna know more or get connected with me ?
-					</h2>
-				</div>
-				<div id="links" data-aos="zoom-out-up">
-					<span class="mail"
-						><a
-							href="mailto:amarjeetmalpotra@outlook.com"
-							target="_blank"
-							rel="noopener noreferer"
-							><i class="fa fa-at fa-3x fa-fw"></i></a
-					></span>
-					<span class="codepen"
-						><a
-							href="https://codepen.io/amarjeetmalpotra"
-							target="_blank"
-							rel="noopener noreferer"
-							><i class="fab fa-codepen fa-3x fa-fw"></i></a
-					></span>
-					<span class="github"
-						><a
-							href="https://github.com/amarjeetmalpotra"
-							target="_blank"
-							rel="noopener noreferer"
-							><i class="fab fa-github fa-3x fa-fw"></i></a
-					></span>
-					<span class="dev"
-						><a
-							href="https://dev.to/amarjeetmalpotra"
-							target="_blank"
-							rel="noopener noreferer"
-							><i class="fab fa-dev fa-3x fa-fw"></i></a
-					></span>
-					<span class="linkedin"
-						><a
-							href="https://linkedin.com/in/malpotra"
-							target="_blank"
-							rel="noopener noreferer"
-							><i class="fab fa-linkedin-in fa-3x fa-fw"></i></a
-					></span>
-				</div>
-				<hr class="white" />
-				<div class="mt-5 pt-4 white l-spacing">
-					<h2>
-						&lt;/&gt; with <i class="heart fas fa-heart"></i> in
-						<img
-							class="spotlight"
-							height="27"
-							src="https://img.icons8.com/color/50/000000/india-circular.png"
-							alt="India"
-						/>
-						by <span class="spotlight">Amarjeet</span>
-					</h2>
-					<h4>
-						&copy; <span id="copy"></span>
-						<span class="spotlight">Amarjeet Malpotra</span> under
-						MIT License
-					</h4>
-				</div>
-			</div>
+			<footer>&copy; <span id="year"></span> Amarjeet Malpotra</footer>
 		</div>
-		<div class="scroll_top"><i class="fas fa-3x fa-chevron-up"></i></div>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+		<canvas id="confetti"></canvas>
+		<script src="js/confetti.js"></script>
 		<script src="js/main.js"></script>
-		<div class="cursor"></div>
 	</body>
 </html>
