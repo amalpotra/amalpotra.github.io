@@ -6,14 +6,14 @@ body {
 	user-select: none;
 	overflow: hidden;
 }
-.header {
+header {
 	width: 100%;
 	padding: 20px;
 	position: fixed;
 	display: inline-flex;
 	align-items: center;
 	box-sizing: border-box;
-	z-index: 1;
+	z-index: 3;
 	#logo {
 		width: 40px;
 	}
@@ -44,6 +44,91 @@ body {
 			margin-top: 5px;
 			transform: rotate(-45deg);
 			transition: margin-top 150ms ease 100ms, transform 400ms ease 200ms;
+		}
+	}
+}
+nav {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
+	height: 280px;
+	width: 100%;
+	z-index: 0;
+	#quote {
+		margin-bottom: 40px;
+		font-size: 20px;
+		font-weight: 500;
+		color: #4c515a;
+	}
+	.links {
+		display: flex;
+	}
+	.link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 55px;
+		width: 55px;
+		margin: 0px 7px;
+		border-radius: 50%;
+		background-color: #5c5edc;
+		transition: all 200ms ease;
+		.icon {
+			height: 30px;
+			filter: invert(100%);
+		}
+		&:nth-child(1) {
+			background-color: #408cff;
+			background: linear-gradient(
+				45deg,
+				#66757f,
+				#0586ff,
+				#3485ff,
+				#7cb1ff,
+				#fff
+			);
+		}
+		&:nth-child(2) {
+			background-color: #111;
+			background: linear-gradient(
+				45deg,
+				#25211f,
+				#312828,
+				#3f3434,
+				#6b6767,
+				#fff
+			);
+		}
+		&:nth-child(3) {
+			background-color: #6e5494;
+			background: linear-gradient(
+				45deg,
+				#4057c0,
+				#6e39be,
+				#8359c3,
+				#fafafa
+			);
+		}
+		&:nth-child(4) {
+			background-color: #111;
+			background: linear-gradient(45deg, #000, #111, #222, #505050, #ccc);
+		}
+		&:nth-child(5) {
+			background-color: #0092d6;
+			background: linear-gradient(
+				45deg,
+				#66757f,
+				#006192,
+				#0078b4,
+				#37b6f1,
+				#fff
+			);
+		}
+		&:hover {
+			box-shadow: 0 3px 3px #8f8f8f;
+			transform: translateY(-3px) scale(1.05);
 		}
 	}
 }
@@ -86,6 +171,7 @@ body {
 	background-repeat: no-repeat;
 	box-shadow: 0 -1px 10px #ccc;
 	overflow-x: hidden;
+	z-index: 2;
 	&.stacked {
 		border-radius: 10px;
 		transform: translate(0px, 34vh) scale(0.8);
