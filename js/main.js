@@ -14,9 +14,6 @@ const quotes = [
 	'Showing off is the fool’s idea of glory.',
 	'It’s harder to read code than to write it.',
 	'If opportunity doesn’t knock, build a door.',
-	'Good design adds value faster than it adds cost.',
-	'Another man’s success should never make you mad.',
-	'One’s crappy software is another’s full-time job.',
 ]
 
 //* Confetti
@@ -32,6 +29,7 @@ var confetti = new ConfettiGenerator(confettiSettings)
 //* Menu Button
 elts.menuBtn.addEventListener('click', () => {
 	elts.menuBtn.classList.toggle('active')
+	elts.quote.classList.toggle('fade-in')
 	elts.card.classList.toggle('stacked')
 	elts.stack.classList.toggle('stacked')
 	if (elts.card.classList.contains('stacked')) {
