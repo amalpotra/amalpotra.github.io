@@ -1,44 +1,45 @@
-const elts = {
-	menuBtn: document.querySelector('.menu-btn'),
-	quote: document.getElementById('quote'),
-	card: document.querySelector('.card'),
-	stack: document.querySelector('.stack'),
-	year: document.getElementById('year'),
-}
+const menuButton = document.querySelector('.menu-btn')
+const quote = document.getElementById('quote')
+const card = document.querySelector('.card')
+const stack = document.querySelector('.stack')
+const year = document.getElementById('year')
 
 const quotes = [
-	'Proof by analogy is fraud.',
-	'Deleted code is debugged code.',
-	'You must run before you can walk.',
-	'Time and JavaScript wait for none.',
-	'Showing off is the fool’s idea of glory.',
-	'It’s harder to read code than to write it.',
-	'If opportunity doesn’t knock, build a door.',
+  'Proof by analogy is fraud.',
+  'Deleted code is debugged code.',
+  'Fix the cause, not the symptom.',
+  'Time and JavaScript wait for none.',
+  'Simplicity is the soul of efficiency.',
+  'Showing off is the fool’s idea of glory.',
+  'Make it work, make it right, make it fast.',
+  'It’s harder to read code than to write it.',
+  'Simplicity is prerequisite for reliability.',
+  'Java is to JavaScript what car is to Carpet.',
 ]
 
-//* Confetti
-var confettiSettings = {
-	target: 'confetti',
-	max: 40,
-	size: 1.5,
-	clock: 5,
-	props: ['circle'],
+// Confetti
+const confettiSettings = {
+  target: 'confetti',
+  max: 40,
+  size: 1.5,
+  clock: 5,
+  props: ['circle'],
 }
-var confetti = new ConfettiGenerator(confettiSettings)
+const confetti = new ConfettiGenerator(confettiSettings)
 
-//* Menu Button
-elts.menuBtn.addEventListener('click', () => {
-	elts.menuBtn.classList.toggle('active')
-	elts.quote.classList.toggle('fade-in')
-	elts.card.classList.toggle('stacked')
-	elts.stack.classList.toggle('stacked')
-	if (elts.card.classList.contains('stacked')) {
-		// Confetti
-		confetti.render()
-		// Get random quote
-		elts.quote.innerText = quotes[~~(quotes.length * Math.random())]
-	} else setTimeout(() => confetti.clear(), 350)
+// Menu Button
+menuButton.addEventListener('click', () => {
+  menuButton.classList.toggle('active')
+  quote.classList.toggle('fade-in')
+  card.classList.toggle('stacked')
+  stack.classList.toggle('stacked')
+  if (card.classList.contains('stacked')) {
+    // Confetti
+    confetti.render()
+    // Get random quote
+    quote.innerText = quotes[~~(quotes.length * Math.random())]
+  } else setTimeout(() => confetti.clear(), 350)
 })
 
-//* Copyright year
-elts.year.innerText = new Date().getFullYear()
+// Copyright year
+year.innerText = new Date().getFullYear()
