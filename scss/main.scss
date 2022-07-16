@@ -1,658 +1,646 @@
 body {
-	margin: 0;
-	padding: 0;
-	background-color: #ebecf0;
-	font-family: 'Montserrat', sans-serif;
-	user-select: none;
-	overflow: hidden;
+  margin: 0;
+  background-color: #ebecf0;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
 }
 header {
-	width: 100vw;
-	padding: 20px;
-	position: fixed;
-	display: inline-flex;
-	align-items: center;
-	box-sizing: border-box;
-	z-index: 3;
-	#logo {
-		width: 40px;
-	}
-	.menu-btn {
-		height: 15px;
-		width: 35px;
-		margin-left: auto;
-		padding: 5px;
-		cursor: pointer;
-		span::before,
-		span:after {
-			height: 3px;
-			width: 35px;
-			content: '';
-			position: absolute;
-			background-color: #000;
-			transition: margin-top 200ms ease 200ms, transform 200ms ease;
-		}
-		span:after {
-			margin-top: 10px;
-		}
-		&.active span:before {
-			margin-top: 5px;
-			transform: rotate(45deg);
-			transition: margin-top 150ms ease 100ms, transform 400ms ease 200ms;
-		}
-		&.active span:after {
-			margin-top: 5px;
-			transform: rotate(-45deg);
-			transition: margin-top 150ms ease 100ms, transform 400ms ease 200ms;
-		}
-	}
+  width: 100%;
+  padding: 20px;
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  box-sizing: border-box;
+  z-index: 3;
+  #logo {
+    width: 40px;
+  }
+  .menu-btn {
+    height: 15px;
+    width: 35px;
+    margin-left: auto;
+    padding: 5px;
+    cursor: pointer;
+    span::before,
+    span:after {
+      height: 3px;
+      width: 35px;
+      content: '';
+      position: absolute;
+      background-color: #000;
+      transition: margin-top 200ms ease 150ms, transform 200ms ease;
+    }
+    span:after {
+      margin-top: 10px;
+    }
+    &.active span:before {
+      margin-top: 5px;
+      transform: rotate(45deg);
+      transition: margin-top 100ms ease 100ms, transform 400ms ease 200ms;
+    }
+    &.active span:after {
+      margin-top: 5px;
+      transform: rotate(-45deg);
+      transition: margin-top 100ms ease 100ms, transform 400ms ease 200ms;
+    }
+  }
 }
 nav {
-	display: flex;
-	flex-direction: column;
-	position: absolute;
-	align-items: center;
-	justify-content: center;
-	height: 38vh;
-	width: 100%;
-	z-index: 0;
-	#quote {
-		margin-bottom: 40px;
-		font-size: 20px;
-		font-weight: 500;
-		color: #4c515a;
-		letter-spacing: 2px;
-		white-space: nowrap;
-		opacity: 0;
-		transition: all 300ms ease-in-out;
-		&.fade-in {
-			letter-spacing: normal;
-			opacity: initial;
-			transition: all 300ms ease-in-out 130ms;
-		}
-	}
-	.links {
-		display: flex;
-	}
-	.link {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		height: 55px;
-		width: 55px;
-		margin: 0px 7px;
-		border-radius: 50%;
-		background-color: #5c5edc;
-		transition: all 200ms ease;
-		.icon {
-			height: 30px;
-			filter: invert(100%);
-		}
-		&:nth-child(1) {
-			background-color: #408cff;
-			background: linear-gradient(
-				45deg,
-				#66757f,
-				#0586ff,
-				#3485ff,
-				#7cb1ff,
-				#fff
-			);
-		}
-		&:nth-child(2) {
-			background-color: #111;
-			background: linear-gradient(
-				45deg,
-				#25211f,
-				#312828,
-				#3f3434,
-				#6b6767,
-				#fff
-			);
-		}
-		&:nth-child(3) {
-			background-color: #6e5494;
-			background: linear-gradient(
-				45deg,
-				#4057c0,
-				#6e39be,
-				#8359c3,
-				#fafafa
-			);
-		}
-		&:nth-child(4) {
-			background-color: #111;
-			background: linear-gradient(45deg, #000, #111, #222, #505050, #ccc);
-		}
-		&:nth-child(5) {
-			background-color: #0092d6;
-			background: linear-gradient(
-				45deg,
-				#66757f,
-				#006192,
-				#0078b4,
-				#37b6f1,
-				#fff
-			);
-		}
-		&:hover {
-			box-shadow: 0 3px 3px #8f8f8f;
-			transform: translateY(-3px) scale(1.05);
-		}
-	}
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  height: 38vh;
+  width: 100%;
+  z-index: 0;
+  #quote {
+    margin-bottom: 40px;
+    font-size: 20px;
+    color: #4c515a;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+    &.fade-in {
+      letter-spacing: normal;
+      opacity: initial;
+      transition: all 300ms ease-in-out 130ms;
+    }
+  }
+  .links {
+    display: flex;
+  }
+  .link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 55px;
+    width: 55px;
+    margin: 0px 7px;
+    border-radius: 50%;
+    background-color: #5c5edc;
+    transition: transform 150ms ease;
+    .icon {
+      height: 30px;
+      filter: invert(100%);
+    }
+    &:nth-child(1) {
+      background-color: #408cff;
+      background: linear-gradient(
+        45deg,
+        #66757f,
+        #0586ff,
+        #3485ff,
+        #7cb1ff,
+        #fff
+      );
+    }
+    &:nth-child(2) {
+      background-color: #111;
+      background: linear-gradient(
+        45deg,
+        #25211f,
+        #312828,
+        #3f3434,
+        #6b6767,
+        #fff
+      );
+    }
+    &:nth-child(3) {
+      background-color: #6e5494;
+      background: linear-gradient(45deg, #4057c0, #6e39be, #8359c3, #fafafa);
+    }
+    &:nth-child(4) {
+      background-color: #111;
+      background: linear-gradient(45deg, #000, #111, #222, #505050, #ccc);
+    }
+    &:nth-child(5) {
+      background-color: #0092d6;
+      background: linear-gradient(
+        45deg,
+        #66757f,
+        #006192,
+        #0078b4,
+        #37b6f1,
+        #fff
+      );
+    }
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+    }
+  }
 }
 .stack {
-	.card-1,
-	.card-2 {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		border-radius: 10px;
-		background-color: #fff;
-		transition: all 100ms ease-in-out;
-		box-shadow: 0 -1px 10px #ccc;
-	}
-	.card-1 {
-		transform: translate(0, 22vh) scale(0.65);
-	}
-	.card-2 {
-		transform: translate(0, 28vh) scale(0.7);
-	}
-	&.stacked {
-		.card-1 {
-			transition: all 200ms ease-in-out 300ms;
-			transform: translate(0, 22vh) scale(0.7);
-		}
-		.card-2 {
-			transition: all 200ms ease-in-out 250ms;
-			transform: translate(0, 28vh) scale(0.75);
-		}
-	}
+  .card-1,
+  .card-2 {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    background-color: #fff;
+    transition: all 100ms ease-in-out;
+    box-shadow: 0 -1px 10px #ccc;
+  }
+  .card-1 {
+    transform: translate(0, 22vh) scale(0.65);
+  }
+  .card-2 {
+    transform: translate(0, 28vh) scale(0.7);
+  }
+  &.stacked {
+    .card-1 {
+      transition: all 200ms ease-in-out 300ms;
+      transform: translate(0, 22vh) scale(0.7);
+    }
+    .card-2 {
+      transition: all 200ms ease-in-out 250ms;
+      transform: translate(0, 28vh) scale(0.75);
+    }
+  }
 }
 .card {
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
-	transition: transform 350ms ease-in-out 30ms;
-	background-color: #fff;
-	background-image: url('../assets/svgs/bg.svg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	box-shadow: 0 -1px 10px #ccc;
-	overflow-x: hidden;
-	z-index: 2;
-	&.stacked {
-		border-radius: 10px;
-		transform: translate(0px, 34vh) scale(0.8);
-		.container {
-			padding-top: 75px;
-		}
-	}
-	.container {
-		display: inline-block;
-		padding: 110px 0 20px 130px;
-		transition: padding 350ms ease 30ms;
-	}
-	.avatar {
-		width: 220px;
-		height: 220px;
-		border-radius: 50%;
-		background-size: 220px;
-		background-image: url('../assets/img/avatar.jpg');
-		overflow: hidden;
-	}
-	.name {
-		margin-top: 40px;
-		font-size: 50px;
-		font-weight: 700;
-	}
-	.about {
-		font-size: 23px;
-		font-weight: 500;
-		max-width: 35vw;
-		span {
-			display: block;
-			margin-top: 30px;
-			font-size: 18px;
-			line-height: 25px;
-			font-weight: initial;
-		}
-	}
-	.github {
-		display: inline-flex;
-		align-items: center;
-		margin-top: 50px;
-		text-decoration: none;
-		color: #4c515a;
-		font-size: 17px;
-		transition: all 200ms ease;
-		img {
-			height: 25px;
-			margin-right: 10px;
-			filter: invert(30%) sepia(13%) saturate(435%) hue-rotate(180deg)
-				brightness(93%) contrast(86%);
-			transition: all 300ms ease;
-		}
-		&:hover {
-			color: #5c5edc;
-			img {
-				filter: invert(28%) sepia(81%) saturate(1021%)
-					hue-rotate(214deg) brightness(112%) contrast(91%);
-			}
-		}
-	}
-	.hero {
-		display: inline;
-		position: absolute;
-		height: 90vh;
-		transform: translate(15vw, 5vh);
-		transition: transform 500ms ease;
-		img {
-			display: inline-block;
-			height: 95vh;
-			filter: opacity(0.2);
-			transform: scale(0.9);
-			transition: transform 500ms ease, filter 750ms ease;
-		}
-		&:hover {
-			transform: translate(5vw, 5vh);
-			img {
-				filter: opacity(1);
-				transform: scale(0.7);
-			}
-		}
-	}
-	footer {
-		padding: 20px 0 20px 40px;
-		font-size: 14px;
-		font-weight: 500;
-	}
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: transform 350ms ease-in-out 30ms;
+  background-color: #fff;
+  background-image: url('../assets/svgs/bg.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 -1px 10px #ccc;
+  overflow-x: hidden;
+  z-index: 2;
+  &.stacked {
+    border-radius: 10px;
+    transform: translate(0px, 34vh) scale(0.8);
+    .container {
+      padding-top: 75px;
+    }
+  }
+  .container {
+    display: inline-block;
+    padding: 110px 0 20px 130px;
+    transition: padding 350ms ease 30ms;
+  }
+  .avatar {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background-size: 220px;
+    background-image: url('../assets/img/avatar.jpg');
+    overflow: hidden;
+  }
+  .name {
+    margin-top: 40px;
+    font-size: 50px;
+    font-weight: 700;
+  }
+  .about {
+    font-size: 23px;
+    font-weight: 500;
+    max-width: 35vw;
+    span {
+      display: block;
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 25px;
+      font-weight: initial;
+    }
+  }
+  .github {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 50px;
+    text-decoration: none;
+    color: #4c515a;
+    font-size: 17px;
+    transition: all 200ms ease;
+    img {
+      height: 25px;
+      margin-right: 10px;
+      filter: invert(30%) sepia(13%) saturate(435%) hue-rotate(180deg)
+        brightness(93%) contrast(86%);
+      transition: all 300ms ease;
+    }
+    &:hover {
+      color: #5c5edc;
+      img {
+        filter: invert(28%) sepia(81%) saturate(1021%) hue-rotate(214deg)
+          brightness(112%) contrast(91%);
+      }
+    }
+  }
+  .hero {
+    display: inline;
+    position: absolute;
+    height: 90vh;
+    transform: translate(15vw, 5vh);
+    transition: transform 500ms ease;
+    img {
+      display: inline-block;
+      height: 95vh;
+      filter: opacity(0.2);
+      transform: scale(0.9);
+      transition: transform 500ms ease, filter 750ms ease;
+    }
+    &:hover {
+      transform: translate(5vw, 5vh);
+      img {
+        filter: opacity(1);
+        transform: scale(0.7);
+      }
+    }
+  }
+  footer {
+    padding: 20px 0 20px 40px;
+    font-size: 14px;
+    font-weight: 500;
+  }
 }
 
 @media only screen and (max-width: 480px) and (orientation: portrait) {
-	nav {
-		height: 38vh;
-		#quote {
-			margin-bottom: 25px;
-			font-size: 16px;
-		}
-		.link {
-			height: 45px;
-			width: 45px;
-			.icon {
-				height: 25px;
-			}
-		}
-	}
-	.card {
-		.container {
-			padding: 70px 20px 15px 20px;
-			display: flex;
-			min-height: calc(100vh - 150px);
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-		.avatar {
-			width: 170px;
-			height: 170px;
-			background-size: 170px;
-		}
-		.name {
-			font-size: 45px;
-			text-align: center;
-		}
-		.about {
-			max-width: initial;
-			font-size: 20px;
-			text-align: center;
-			span {
-				font-size: 16px;
-			}
-		}
-		.github {
-			font-size: 15px;
-			img {
-				height: 22px;
-			}
-		}
-		.hero {
-			display: none;
-		}
-		footer {
-			font-size: 13px;
-		}
-		&.stacked {
-			transform: translate(0px, 32vh) scale(0.9);
-		}
-	}
-	.stack {
-		.card-1 {
-			transform: translate(0, 22vh) scale(0.75);
-		}
-		.card-2 {
-			transform: translate(0, 27vh) scale(0.8);
-		}
-		&.stacked {
-			.card-1 {
-				transform: translate(0, 22vh) scale(0.8);
-			}
-			.card-2 {
-				transform: translate(0, 27vh) scale(0.85);
-			}
-		}
-	}
+  nav {
+    height: 38vh;
+    #quote {
+      margin-bottom: 25px;
+      font-size: 16px;
+    }
+    .link {
+      height: 45px;
+      width: 45px;
+      .icon {
+        height: 25px;
+      }
+    }
+  }
+  .card {
+    .container {
+      padding: 70px 20px 15px 20px;
+      display: flex;
+      min-height: calc(100vh - 150px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .avatar {
+      width: 170px;
+      height: 170px;
+      background-size: 170px;
+    }
+    .name {
+      font-size: 45px;
+      text-align: center;
+    }
+    .about {
+      max-width: initial;
+      font-size: 20px;
+      text-align: center;
+      span {
+        font-size: 16px;
+      }
+    }
+    .github {
+      font-size: 15px;
+      img {
+        height: 22px;
+      }
+    }
+    .hero {
+      display: none;
+    }
+    footer {
+      font-size: 13px;
+    }
+    &.stacked {
+      transform: translate(0px, 32vh) scale(0.9);
+    }
+  }
+  .stack {
+    .card-1 {
+      transform: translate(0, 22vh) scale(0.75);
+    }
+    .card-2 {
+      transform: translate(0, 27vh) scale(0.8);
+    }
+    &.stacked {
+      .card-1 {
+        transform: translate(0, 22vh) scale(0.8);
+      }
+      .card-2 {
+        transform: translate(0, 27vh) scale(0.85);
+      }
+    }
+  }
 }
 @media only screen and (max-height: 480px) and (orientation: landscape) {
-	nav {
-		height: 42vh;
-		#quote {
-			margin-bottom: 20px;
-			font-size: 17px;
-		}
-		.link {
-			height: 45px;
-			width: 45px;
-			.icon {
-				height: 25px;
-			}
-		}
-	}
-	.card {
-		.container {
-			padding: 70px 0 20px 30px;
-		}
-		.avatar {
-			height: 100px;
-			width: 100px;
-			background-size: 100px;
-		}
-		.name {
-			margin-top: 20px;
-			font-size: 35px;
-		}
-		.about {
-			margin-top: 17px;
-			font-size: 18px;
-			span {
-				margin-top: 20px;
-				font-size: 16px;
-				width: 60vw;
-			}
-		}
-		.github {
-			margin-top: 30px;
-			font-size: 14px;
-			img {
-				height: 22px;
-			}
-		}
-		.hero {
-			transform: translate(12vw, 5vh);
-		}
-		footer {
-			font-size: 13px;
-		}
-		&.stacked {
-			transform: translate(0px, 45vh) scale(0.9);
-		}
-	}
-	.stack {
-		.card-1 {
-			transform: translate(0, 31vh) scale(0.75);
-		}
-		.card-2 {
-			transform: translate(0, 38vh) scale(0.8);
-		}
-		&.stacked {
-			.card-1 {
-				transform: translate(0, 31vh) scale(0.8);
-			}
-			.card-2 {
-				transform: translate(0, 38vh) scale(0.85);
-			}
-		}
-	}
+  nav {
+    height: 42vh;
+    #quote {
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+    .link {
+      height: 45px;
+      width: 45px;
+      .icon {
+        height: 25px;
+      }
+    }
+  }
+  .card {
+    .container {
+      padding: 70px 0 20px 30px;
+    }
+    .avatar {
+      height: 100px;
+      width: 100px;
+      background-size: 100px;
+    }
+    .name {
+      margin-top: 20px;
+      font-size: 35px;
+    }
+    .about {
+      margin-top: 17px;
+      font-size: 18px;
+      span {
+        margin-top: 20px;
+        font-size: 16px;
+        width: 60vw;
+      }
+    }
+    .github {
+      margin-top: 30px;
+      font-size: 14px;
+      img {
+        height: 22px;
+      }
+    }
+    .hero {
+      transform: translate(12vw, 5vh);
+    }
+    footer {
+      font-size: 13px;
+    }
+    &.stacked {
+      transform: translate(0px, 45vh) scale(0.9);
+    }
+  }
+  .stack {
+    .card-1 {
+      transform: translate(0, 31vh) scale(0.75);
+    }
+    .card-2 {
+      transform: translate(0, 38vh) scale(0.8);
+    }
+    &.stacked {
+      .card-1 {
+        transform: translate(0, 31vh) scale(0.8);
+      }
+      .card-2 {
+        transform: translate(0, 38vh) scale(0.85);
+      }
+    }
+  }
 }
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
-	nav {
-		height: 30vh;
-		#quote {
-			margin-bottom: 30px;
-			font-size: 20px;
-		}
-		.link {
-			height: 50px;
-			width: 50px;
-			.icon {
-				height: 27px;
-			}
-		}
-	}
-	.card {
-		.container {
-			padding: 70px 20px 15px 20px;
-			display: flex;
-			min-height: calc(100vh - 150px);
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-		}
-		.avatar {
-			width: 220px;
-			height: 220px;
-			background-size: 220px;
-		}
-		.name {
-			font-size: 55px;
-			text-align: center;
-		}
-		.about {
-			margin-top: 7vh;
-			max-width: initial;
-			font-size: 30px;
-			text-align: center;
-			span {
-				line-height: 30px;
-				font-size: 23px;
-			}
-		}
-		.github {
-			margin-top: 20vh;
-			font-size: 20px;
-			img {
-				height: 22px;
-			}
-		}
-		.hero {
-			display: none;
-		}
-		footer {
-			font-size: 16px;
-		}
-		&.stacked {
-			transform: translate(0px, 28vh) scale(0.9);
-		}
-	}
-	.stack {
-		.card-1 {
-			transform: translate(0, 18vh) scale(0.75);
-		}
-		.card-2 {
-			transform: translate(0, 23vh) scale(0.8);
-		}
-		&.stacked {
-			.card-1 {
-				transform: translate(0, 18vh) scale(0.8);
-			}
-			.card-2 {
-				transform: translate(0, 23vh) scale(0.85);
-			}
-		}
-	}
+  nav {
+    height: 30vh;
+    #quote {
+      margin-bottom: 30px;
+      font-size: 20px;
+    }
+    .link {
+      height: 50px;
+      width: 50px;
+      .icon {
+        height: 27px;
+      }
+    }
+  }
+  .card {
+    .container {
+      padding: 70px 20px 15px 20px;
+      display: flex;
+      min-height: calc(100vh - 150px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .avatar {
+      width: 220px;
+      height: 220px;
+      background-size: 220px;
+    }
+    .name {
+      font-size: 55px;
+      text-align: center;
+    }
+    .about {
+      margin-top: 7vh;
+      max-width: initial;
+      font-size: 30px;
+      text-align: center;
+      span {
+        line-height: 30px;
+        font-size: 23px;
+      }
+    }
+    .github {
+      margin-top: 20vh;
+      font-size: 20px;
+      img {
+        height: 22px;
+      }
+    }
+    .hero {
+      display: none;
+    }
+    footer {
+      font-size: 16px;
+    }
+    &.stacked {
+      transform: translate(0px, 28vh) scale(0.9);
+    }
+  }
+  .stack {
+    .card-1 {
+      transform: translate(0, 18vh) scale(0.75);
+    }
+    .card-2 {
+      transform: translate(0, 23vh) scale(0.8);
+    }
+    &.stacked {
+      .card-1 {
+        transform: translate(0, 18vh) scale(0.8);
+      }
+      .card-2 {
+        transform: translate(0, 23vh) scale(0.85);
+      }
+    }
+  }
 }
 @media only screen and (min-height: 768px) and (max-height: 1024px) and (orientation: landscape) {
-	nav {
-		height: 32vh;
-		#quote {
-			margin-bottom: 25px;
-			font-size: 20px;
-		}
-		.link {
-			height: 50px;
-			width: 50px;
-			.icon {
-				height: 27px;
-			}
-		}
-	}
-	.card {
-		.container {
-			padding: 120px 0 20px 60px;
-		}
-		.avatar {
-			height: 200px;
-			width: 200px;
-			background-size: 200px;
-		}
-		.name {
-			margin-top: 30px;
-			font-size: 45px;
-		}
-		.about {
-			margin-top: 27px;
-			font-size: 25px;
-			span {
-				max-width: 50vw;
-				margin-top: 30px;
-				font-size: 20px;
-				width: 60vw;
-			}
-		}
-		.github {
-			margin-top: 8vh;
-			font-size: 16px;
-			img {
-				height: 22px;
-			}
-		}
-		.hero {
-			transform: translate(5vw, 5vh) scale(0.7);
-			&:hover {
-				transform: translate(-5vw, 5vh);
-				img {
-					transform: scale(0.5);
-				}
-			}
-		}
-		footer {
-			font-size: 13px;
-		}
-		&.stacked {
-			transform: translate(0, 34vh) scale(0.9);
-		}
-	}
-	.stack {
-		.card-1 {
-			transform: translate(0, 22vh) scale(0.75);
-		}
-		.card-2 {
-			transform: translate(0, 28vh) scale(0.8);
-		}
-		&.stacked {
-			.card-1 {
-				transform: translate(0, 22vh) scale(0.8);
-			}
-			.card-2 {
-				transform: translate(0, 28vh) scale(0.85);
-			}
-		}
-	}
+  nav {
+    height: 32vh;
+    #quote {
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+    .link {
+      height: 50px;
+      width: 50px;
+      .icon {
+        height: 27px;
+      }
+    }
+  }
+  .card {
+    .container {
+      padding: 120px 0 20px 60px;
+    }
+    .avatar {
+      height: 200px;
+      width: 200px;
+      background-size: 200px;
+    }
+    .name {
+      margin-top: 30px;
+      font-size: 45px;
+    }
+    .about {
+      margin-top: 27px;
+      font-size: 25px;
+      span {
+        max-width: 50vw;
+        margin-top: 30px;
+        font-size: 20px;
+        width: 60vw;
+      }
+    }
+    .github {
+      margin-top: 8vh;
+      font-size: 16px;
+      img {
+        height: 22px;
+      }
+    }
+    .hero {
+      transform: translate(5vw, 5vh) scale(0.7);
+      &:hover {
+        transform: translate(-5vw, 5vh);
+        img {
+          transform: scale(0.5);
+        }
+      }
+    }
+    footer {
+      font-size: 13px;
+    }
+    &.stacked {
+      transform: translate(0, 34vh) scale(0.9);
+    }
+  }
+  .stack {
+    .card-1 {
+      transform: translate(0, 22vh) scale(0.75);
+    }
+    .card-2 {
+      transform: translate(0, 28vh) scale(0.8);
+    }
+    &.stacked {
+      .card-1 {
+        transform: translate(0, 22vh) scale(0.8);
+      }
+      .card-2 {
+        transform: translate(0, 28vh) scale(0.85);
+      }
+    }
+  }
 }
 @media only screen and (min-width: 1280px) and (max-width: 1440px) {
-	.card {
-		.container {
-			padding: 90px 0 20px 120px;
-		}
-		.avatar {
-			width: 190px;
-			height: 190px;
-			background-size: 190px;
-		}
-		.name {
-			margin-top: 30px;
-			font-size: 48px;
-		}
-		.about {
-			font-size: 20px;
-			font-weight: 500;
-			max-width: 35vw;
-			span {
-				margin-top: 25px;
-				font-size: 16px;
-			}
-		}
-		.github {
-			margin-top: 30px;
-			font-size: 15px;
-		}
-		footer {
-			font-size: 12px;
-		}
-	}
+  .card {
+    .container {
+      padding: 90px 0 20px 120px;
+    }
+    .avatar {
+      width: 190px;
+      height: 190px;
+      background-size: 190px;
+    }
+    .name {
+      margin-top: 30px;
+      font-size: 48px;
+    }
+    .about {
+      font-size: 20px;
+      font-weight: 500;
+      max-width: 35vw;
+      span {
+        font-size: 16px;
+      }
+    }
+    .github {
+      margin-top: 30px;
+      font-size: 15px;
+    }
+    footer {
+      font-size: 12px;
+    }
+  }
 }
 @media only screen and (min-width: 1900px) {
-	nav {
-		height: 32vh;
-		#quote {
-			margin-bottom: 35px;
-			font-size: 30px;
-		}
-		.link {
-			height: 65px;
-			width: 65px;
-			.icon {
-				height: 35px;
-			}
-		}
-	}
-	.card {
-		.container {
-			padding: 130px 0 20px 150px;
-		}
-		.avatar {
-			height: 300px;
-			width: 300px;
-			background-size: 300px;
-		}
-		.name {
-			margin-top: 35px;
-			font-size: 75px;
-		}
-		.about {
-			margin-top: 35px;
-			font-size: 45px;
-			span {
-				margin-top: 30px;
-				font-size: 30px;
-				line-height: 37px;
-			}
-		}
-		.github {
-			margin-top: 12vh;
-			font-size: 27px;
-			img {
-				height: 22px;
-			}
-		}
-		.hero {
-			transform: translate(25vw, 5vh);
-			&:hover {
-				transform: translate(10vw, 5vh);
-			}
-		}
-		footer {
-			font-size: 22px;
-		}
-	}
+  nav {
+    height: 32vh;
+    #quote {
+      margin-bottom: 35px;
+      font-size: 30px;
+    }
+    .link {
+      height: 65px;
+      width: 65px;
+      .icon {
+        height: 35px;
+      }
+    }
+  }
+  .card {
+    .container {
+      padding: 130px 0 20px 150px;
+    }
+    .avatar {
+      height: 300px;
+      width: 300px;
+      background-size: 300px;
+    }
+    .name {
+      margin-top: 35px;
+      font-size: 75px;
+    }
+    .about {
+      margin-top: 35px;
+      font-size: 45px;
+      span {
+        font-size: 30px;
+        line-height: 37px;
+      }
+    }
+    .github {
+      margin-top: 12vh;
+      font-size: 27px;
+      img {
+        height: 22px;
+      }
+    }
+    .hero {
+      transform: translate(25vw, 5vh);
+      &:hover {
+        transform: translate(10vw, 5vh);
+      }
+    }
+    footer {
+      font-size: 22px;
+    }
+  }
 }
